@@ -1,135 +1,71 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, User, BookOpen } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, User, BookOpen, Globe } from 'lucide-react';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-      {/* Hero Section */}
-      <header className="container mx-auto px-6 py-16 md:py-32">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="mb-8">
-            <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80"
-              alt="Profile Picture"
-              className="w-32 h-32 rounded-full mx-auto border-4 border-blue-400 shadow-xl object-cover"
-            />
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-            John Developer
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Full Stack Developer & UI/UX Enthusiast
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white p-8">
+      <main className="max-w-3xl mx-auto">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">David Myriel</h1>
+          <p className="text-xl text-gray-300">
+            Professional writer and educator in vector search and machine learning
           </p>
+        </header>
+
+        <section className="flex justify-center space-x-6 mb-12">
           <a 
             href="https://vectorsearch.tech" 
-            className="inline-flex items-center gap-2 text-lg font-semibold text-blue-400 hover:text-blue-300 transition-colors mb-6"
+            className="flex items-center hover:text-blue-400 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <BookOpen className="w-5 h-5" />
-            VectorSearch.tech
+            <Globe className="w-6 h-6 mr-2" />
+            <span>Blog</span>
           </a>
-          <div className="flex justify-center space-x-4">
-            <a href="https://github.com" className="hover:text-blue-400 transition-colors">
-              <Github className="w-6 h-6" />
-            </a>
-            <a href="https://linkedin.com" className="hover:text-blue-400 transition-colors">
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a href="mailto:john@example.com" className="hover:text-blue-400 transition-colors">
-              <Mail className="w-6 h-6" />
-            </a>
-          </div>
-        </div>
-      </header>
+          <a 
+            href="https://www.linkedin.com/in/davidmyriel/" 
+            className="flex items-center hover:text-blue-400 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin className="w-6 h-6 mr-2" />
+            <span>LinkedIn</span>
+          </a>
+          <a 
+            href="https://github.com/davidmyriel" 
+            className="flex items-center hover:text-blue-400 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github className="w-6 h-6 mr-2" />
+            <span>GitHub</span>
+          </a>
+          <a 
+            href="mailto:davidmyriel@gmail.com" 
+            className="flex items-center hover:text-blue-400 transition-colors"
+          >
+            <Mail className="w-6 h-6 mr-2" />
+            <span>Email</span>
+          </a>
+        </section>
 
-      {/* About Section */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center mb-8">
-            <User className="w-6 h-6 mr-3 text-blue-400" />
-            <h2 className="text-2xl font-bold">About Me</h2>
-          </div>
-          <p className="text-gray-300 leading-relaxed mb-8">
-            I'm a passionate developer with 5 years of experience building modern web applications.
-            I specialize in React, Node.js, and cloud technologies, focusing on creating scalable
-            and user-friendly solutions that solve real-world problems.
+        <section className="prose prose-invert mx-auto">
+          <p className="text-lg mb-6">
+            Currently creating community efforts and educational content at Qdrant, 
+            focusing on vector search technology and machine learning applications.
           </p>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section className="container mx-auto px-6 py-16 bg-gray-800/50">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center mb-8">
-            <Code2 className="w-6 h-6 mr-3 text-blue-400" />
-            <h2 className="text-2xl font-bold">Featured Projects</h2>
+          
+          <div className="bg-gray-800 p-6 rounded-lg mb-8">
+            <h2 className="text-2xl font-bold mb-4">Current Focus</h2>
+            <ul className="list-disc list-inside space-y-2">
+              <li>Creating educational content at VectorSearch.tech</li>
+              <li>Learning statistics, Python, and machine learning</li>
+              <li>Contributing to open source documentation projects</li>
+              <li>Building community around vector search technology</li>
+            </ul>
           </div>
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                title: "E-Commerce Platform",
-                description: "Full-stack React & Node.js application with real-time inventory management",
-                link: "#"
-              },
-              {
-                title: "Task Manager Pro",
-                description: "Collaborative project management tool with real-time updates",
-                link: "#"
-              },
-              {
-                title: "Social Analytics",
-                description: "Data visualization dashboard for social media metrics",
-                link: "#"
-              },
-              {
-                title: "AI Chat Assistant",
-                description: "Natural language processing chatbot for customer support",
-                link: "#"
-              }
-            ].map((project, index) => (
-              <div key={index} className="bg-gray-700/50 rounded-lg p-6 hover:transform hover:scale-105 transition-transform">
-                <h3 className="text-lg font-semibold mb-3 text-blue-400">{project.title}</h3>
-                <p className="text-gray-300 text-sm mb-4">
-                  {project.description}
-                </p>
-                <a href={project.link} className="inline-flex items-center text-sm text-blue-400 hover:text-blue-300">
-                  View Project <ExternalLink className="w-4 h-4 ml-2" />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center mb-8">
-            <Briefcase className="w-6 h-6 mr-3 text-blue-400" />
-            <h2 className="text-2xl font-bold">Experience</h2>
-          </div>
-          <div className="space-y-8">
-            <div className="border-l-2 border-blue-400 pl-4">
-              <h3 className="text-xl font-semibold">Senior Developer - Tech Corp</h3>
-              <p className="text-gray-400">2020 - Present</p>
-              <p className="text-gray-300 mt-2">
-                Led development of multiple high-impact projects and mentored junior developers.
-              </p>
-            </div>
-            <div className="border-l-2 border-blue-400 pl-4">
-              <h3 className="text-xl font-semibold">Full Stack Developer - StartUp Inc</h3>
-              <p className="text-gray-400">2018 - 2020</p>
-              <p className="text-gray-300 mt-2">
-                Developed and maintained various web applications using modern technologies.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="container mx-auto px-6 py-8 text-center text-gray-400">
-        <p>© 2024 John Developer. All rights reserved.</p>
-      </footer>
+        </section>
+      </main>
     </div>
   );
 }
